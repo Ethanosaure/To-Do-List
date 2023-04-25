@@ -3,8 +3,10 @@ export function addList() {
   // Add event listener to add task each time when click on Add
   AddButton.addEventListener("click", AddingTask);
   function AddingTask() {
+    // Creating Every Elements
     let Del = document.createElement("button");
     Del.setAttribute("class", "DelBtn");
+    Del.setAttribute("type", "button");
     let li = document.createElement("li");
     let span = document.createElement("span");
     let checkbox = document.createElement("input");
@@ -19,7 +21,7 @@ export function addList() {
     });
 
     // Create an Id for each Delete Button
-    const ListBtn = document.querySelectorAll("button");
+    const ListBtn = document.querySelectorAll("button[type='button'");
     ListBtn.forEach((item, index) => {
       item.setAttribute("id", `DelBtn${index}`);
     });
@@ -34,9 +36,13 @@ export function addList() {
       Del.innerText = "X";
       span.appendChild(checkbox);
       li.appendChild(Del);
-      span.appendChild(Del);
       li.appendChild(span);
       ul.appendChild(li);
+
+      // Function that delete the li when the delete button is clicked
+      // Del.addEventListener("click", () => {
+      //   li.remove();
+      // });
     }
   }
 }
