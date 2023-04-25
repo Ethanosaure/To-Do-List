@@ -1,8 +1,11 @@
 export function DeleteBtn() {
-  const Del = document.getElementById("DelBtn");
+  const listitems = document.querySelectorAll("li");
 
-  Del.addEventListener("click", DeleteTask);
-  function DeleteTask() {
-    remove();
-  }
+  listitems.forEach((element, index) => {
+    const DeleteBtn = element.querySelector(`#DelBtn${index}`);
+
+    DeleteBtn.addEventListener("click", () => {
+      element.remove();
+    });
+  });
 }
