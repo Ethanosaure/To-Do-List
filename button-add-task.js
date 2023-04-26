@@ -1,7 +1,6 @@
 import { buttonDeleteTask } from "./button-delete-task.js";
 import { Check } from "./checked.js";
 import { Edit } from "./button-edit.js";
-
 export function buttonAddTask() {
   // Write an alert message if there's nothing inside the input
   const NewTask = document.getElementById("NewTask").value;
@@ -60,4 +59,5 @@ export function buttonAddTask() {
   li.appendChild(Del);
   li.appendChild(span);
   ul.appendChild(li);
+  window.localStorage.setItem("task", JSON.stringify({ Task: `${li}` }));
 }
