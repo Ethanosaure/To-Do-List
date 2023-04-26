@@ -1,5 +1,6 @@
 import { buttonDeleteTask } from "./button-delete-task.js";
 import { Check } from "./checked.js";
+import { Edit } from "./button-edit.js";
 
 export function buttonAddTask() {
   // Write an alert message if there's nothing inside the input
@@ -15,6 +16,9 @@ export function buttonAddTask() {
   // Get index of checkbox
   const checkboxList = document.querySelectorAll("input");
   const checkboxindex = checkboxList.length ? checkboxList.length : 0;
+  // get index of edit
+  const editList = document.getElementsByClassName("edit");
+  const editIndex = editList.length ? editList.length : 0;
 
   // Setup li (task)
   const taskId = `task_${index}`;
@@ -27,6 +31,14 @@ export function buttonAddTask() {
   Del.setAttribute("type", "button");
   Del.setAttribute("id", `DelBtn${index}`);
   Del.addEventListener("click", () => buttonDeleteTask(li));
+
+  // create edit button with Id
+  const editId = `edit_${editIndex}`;
+  let edit = document.createElement("button");
+  edit.setAttribute("class", "edit");
+  edit.setAttribute("type", "button");
+  edit.setAttribute("id", editId);
+  edit.addEventListener("click", () => Edit(span, editId, checkbox));
 
   let span = document.createElement("span");
 
@@ -42,7 +54,9 @@ export function buttonAddTask() {
   // Super stuff
   span.innerText = NewTask;
   Del.innerText = "X";
-  span.appendChild(checkbox);
+  edit.innerText = "Edit";
+  li.appendChild(edit);
+  li.appendChild(checkbox);
   li.appendChild(Del);
   li.appendChild(span);
   ul.appendChild(li);
