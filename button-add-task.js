@@ -38,7 +38,7 @@ export function buttonAddTask() {
   edit.setAttribute("class", "edit");
   edit.setAttribute("type", "button");
   edit.setAttribute("id", editId);
-  edit.addEventListener("click", () => Edit(span, editId, checkbox));
+  edit.addEventListener("click", () => Edit(span, editId));
 
   let span = document.createElement("span");
 
