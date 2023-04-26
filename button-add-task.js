@@ -1,4 +1,5 @@
 import { buttonDeleteTask } from "./button-delete-task.js";
+import { Check } from "./checked.js";
 
 export function buttonAddTask() {
   // Write an alert message if there's nothing inside the input
@@ -11,13 +12,15 @@ export function buttonAddTask() {
   // Get index of task
   const ListItems = document.querySelectorAll("li");
   const index = ListItems.length ? ListItems.length : 0;
+  // Get index of checkbox
+  const checkboxList = document.querySelectorAll("input");
+  const checkboxindex = checkboxList.length ? checkboxList.length : 0;
 
   // Setup li (task)
   const taskId = `task_${index}`;
   let li = document.createElement("li");
   li.setAttribute("id", taskId);
 
-  // Creating Every Elements
   // Setup Delete Button
   let Del = document.createElement("button");
   Del.setAttribute("class", "DelBtn");
@@ -27,8 +30,12 @@ export function buttonAddTask() {
 
   let span = document.createElement("span");
 
+  // setup checkbox and Id's
+  const checkboxId = `checkbox_${checkboxindex}`;
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
+  checkbox.setAttribute("id", checkboxId);
+  checkbox.addEventListener("click", () => Check(checkboxId, checkbox, li));
 
   const ul = document.getElementById("added-ul");
 
