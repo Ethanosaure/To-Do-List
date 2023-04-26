@@ -1,0 +1,16 @@
+export function Check(checkboxId, checkbox, li) {
+  // giving tasks a class name when checked
+  checkbox.classList.toggle(checkboxId);
+  const Done = document.getElementById("Done-ul");
+  const ToDo = document.getElementById("added-ul");
+
+  //   if no class, append in to do tasks
+  if (checkbox.classList == 0) {
+    console.log("pas de class");
+    ToDo.appendChild(li);
+
+    return;
+  }
+  // if class, append in done tasks
+  Done.appendChild(li);
+}

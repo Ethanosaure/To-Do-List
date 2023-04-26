@@ -1,0 +1,255 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(226, 226, 32);
+  width: 375px;
+}
+@media screen and (min-width: 900px) {
+  body {
+    display: block;
+    width: auto;
+  }
+}
+
+.Container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+}
+@media screen and (min-width: 900px) {
+  .Container {
+    width: auto;
+    flex-direction: row;
+  }
+}
+
+.Add-list,
+.Added-list,
+.Done-list {
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  min-height: 50px;
+}
+@media screen and (min-width: 900px) {
+  .Add-list,
+  .Added-list,
+  .Done-list {
+    min-width: 33%;
+    min-height: 500px;
+    display: block;
+  }
+}
+
+input {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding-left: 150px;
+  padding-right: 110px;
+  margin: 10px;
+}
+@media screen and (min-width: 900px) {
+  li {
+    display: block;
+    padding: 0;
+  }
+}
+li .DelBtn {
+  background: none;
+  border: none;
+  position: absolute;
+  left: 340px;
+}
+@media screen and (min-width: 900px) {
+  li .DelBtn {
+    position: relative;
+    left: 0;
+  }
+}
+li .edit {
+  position: absolute;
+  left: 20px;
+}
+@media screen and (min-width: 900px) {
+  li .edit {
+    position: relative;
+    left: 0;
+  }
+}
+li input[type=checkbox] {
+  position: absolute;
+  left: 70px;
+}
+@media screen and (min-width: 900px) {
+  li input[type=checkbox] {
+    position: relative;
+    left: 0;
+  }
+}
+li span {
+  font-size: 25px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */
