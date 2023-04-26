@@ -1,5 +1,8 @@
-import { DeleteBtn } from "./deleteBtn.js";
-import { addList } from "./ButtonAdd.js";
+import { buttonAddTask } from "./button-add-task.js";
+import { buttonDeleteTasks } from "./button-delete-tasks.js";
 
-addList();
-DeleteBtn();
+const buttonAdd = document.getElementById("Add");
+buttonAdd.addEventListener("click", buttonAddTask);
+
+const buttonDeleteAll = document.getElementById("deleteAll");
+buttonDeleteAll.addEventListener("click", buttonDeleteTasks);
