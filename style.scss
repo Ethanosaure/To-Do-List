@@ -1,4 +1,4 @@
-@import "reset.scss";
+@import "reset";
 @import "mixin.scss";
 body {
   display: flex;
@@ -78,6 +78,11 @@ h1 {
 .Added-list {
   span {
     color: red;
+  }
+  .DelBtn {
+    background-color: gray;
+    border: 1px solid black;
+    padding: 10px;
   }
 }
 .Done-list {
