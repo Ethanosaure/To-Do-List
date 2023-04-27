@@ -1,6 +1,5 @@
 import { buttonAddTask } from "./button-add-task.js";
 import { buttonDeleteTasks } from "./button-delete-tasks.js";
-// import { localstorage } from "./localstorage-add.js";
 
 // Add button
 const buttonAdd = document.getElementById("Add");

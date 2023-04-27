@@ -1,7 +1,8 @@
 import { buttonDeleteTask } from "./button-delete-task.js";
 import { Check } from "./checked.js";
 import { Edit } from "./button-edit.js";
-// import { localstorage } from "./localstorage-add.js";
+import { localstorage } from "./localstorage-add.js";
+const task_array = [];
 export function buttonAddTask() {
   // Write an alert message if there's nothing inside the input
   const NewTask = document.getElementById("NewTask").value;
@@ -19,7 +20,6 @@ export function buttonAddTask() {
   // get index of edit
   const editList = document.getElementsByClassName("edit");
   const editIndex = editList.length ? editList.length : 0;
-  //
   // localstorage();
 
   // Setup li (task)
@@ -29,6 +29,7 @@ export function buttonAddTask() {
 
   // Setup Delete Button
   let Del = document.createElement("button");
+  const Del_ = Del.innerHTML;
   Del.setAttribute("class", "DelBtn");
   Del.setAttribute("type", "button");
   Del.setAttribute("id", `DelBtn${index}`);
@@ -38,23 +39,26 @@ export function buttonAddTask() {
   // create edit button with Id
   const editId = `edit_${editIndex}`;
   let edit = document.createElement("button");
+  let edit_ = edit.innerHTML;
   edit.setAttribute("class", "edit");
   edit.setAttribute("type", "button");
   edit.setAttribute("id", editId);
   edit.addEventListener("click", () => Edit(span, editId));
 
   let span = document.createElement("span");
+  const span_ = span.innerText;
 
   // setup checkbox and Id's
   const checkboxId = `checkbox_${checkboxindex}`;
   let checkbox = document.createElement("input");
+  const checkbox_ = checkbox.innerHTML;
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("id", checkboxId);
   checkbox.addEventListener("click", () =>
     Check(checkboxId, checkbox, li, Del)
   );
+  let ul = document.getElementById("added-ul");
 
-  const ul = document.getElementById("added-ul");
   // Super stuff
   span.innerText = NewTask;
   Del.innerText = "X";
@@ -64,4 +68,8 @@ export function buttonAddTask() {
   li.appendChild(Del);
   li.appendChild(span);
   ul.appendChild(li);
+
+  task_array.push(span.innerText);
+  console.log(task_array);
+  localstorage(task_array);
 }

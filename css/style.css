@@ -228,11 +228,6 @@ h1 {
 .Added-list span {
   color: red;
 }
-.Added-list .DelBtn {
-  background-color: gray;
-  border: 1px solid black;
-  padding: 10px;
-}
 
 .Done-list span {
   color: green;
