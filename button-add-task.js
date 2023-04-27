@@ -33,6 +33,7 @@ export function buttonAddTask() {
   Del.setAttribute("type", "button");
   Del.setAttribute("id", `DelBtn${index}`);
   Del.addEventListener("click", () => buttonDeleteTask(li));
+  Del.style.display = "none";
 
   // create edit button with Id
   const editId = `edit_${editIndex}`;
@@ -49,7 +50,9 @@ export function buttonAddTask() {
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("id", checkboxId);
-  checkbox.addEventListener("click", () => Check(checkboxId, checkbox, li));
+  checkbox.addEventListener("click", () =>
+    Check(checkboxId, checkbox, li, Del)
+  );
 
   const ul = document.getElementById("added-ul");
   // Super stuff
