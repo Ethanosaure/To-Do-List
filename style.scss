@@ -2,11 +2,11 @@
 @import "mixin.scss";
 body {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: rgb(226, 226, 32);
-  width: 375px;
+  background-color: #00a6a6;
+  min-width: 375px;
   @include desktop {
     display: block;
     width: auto;
@@ -15,33 +15,38 @@ body {
 .Container {
   align-self: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 375px;
+  flex-direction: column;
+  width: 100%;
   @include desktop {
     width: auto;
     flex-direction: row;
   }
 }
-.Add-list,
 .Added-list,
 .Done-list {
-  align-self: center;
   margin-bottom: 20px;
   margin-top: 20px;
   border-radius: 20px;
   border: 2px solid black;
-  display: flex;
+  display: block;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 375px;
-  min-height: 50px;
+  width: 100%;
+  min-height: 300px;
+  background-color: #ffd131;
   @include desktop {
     min-width: 33%;
     min-height: 500px;
     display: block;
+    margin-top: 50px;
+  }
+}
+.Add-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include desktop {
+    position: fixed;
   }
 }
 input {
@@ -50,48 +55,18 @@ input {
 }
 
 li {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: block;
+
   border: 1px solid black;
-  padding-left: 150px;
-  padding-right: 110px;
   margin: 10px;
   @include desktop {
     display: block;
     padding: 0;
   }
-  .DelBtn {
-    background: none;
-    border: none;
-    position: absolute;
-    left: 340px;
-    @include desktop {
-      position: relative;
-      left: 0;
-    }
-  }
-  .edit {
-    position: absolute;
-    left: 20px;
-    @include desktop {
-      position: relative;
-      left: 0;
-    }
-  }
-  input[type="checkbox"] {
-    position: absolute;
-    left: 70px;
-    @include desktop {
-      position: relative;
-      left: 0;
-    }
-  }
-  span {
-    font-size: 25px;
-    text-align: center;
-  }
+}
+span {
+  font-size: 25px;
+  text-align: center;
 }
 h1 {
   font-size: 30px;
@@ -99,4 +74,14 @@ h1 {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   position: relative;
+}
+.Added-list {
+  span {
+    color: red;
+  }
+}
+.Done-list {
+  span {
+    color: green;
+  }
 }
