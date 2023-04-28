@@ -1,3 +1,6 @@
+import { Check } from "./checked.js";
+import { buttonDeleteTask } from "./button-delete-task.js";
+import { Edit } from "./button-edit.js";
 export function localstorage_load() {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
   if (tasks) {
