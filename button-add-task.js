@@ -1,7 +1,6 @@
 import { buttonDeleteTask } from "./button-delete-task.js";
 import { Check } from "./checked.js";
 import { Edit } from "./button-edit.js";
-// import { localstorage } from "./localstorage-add.js";
 export function buttonAddTask() {
   // Write an alert message if there's nothing inside the input
   const NewTask = document.getElementById("NewTask").value;
@@ -19,8 +18,6 @@ export function buttonAddTask() {
   // get index of edit
   const editList = document.getElementsByClassName("edit");
   const editIndex = editList.length ? editList.length : 0;
-  //
-  // localstorage();
 
   // Setup li (task)
   const taskId = `task_${index}`;
@@ -44,6 +41,7 @@ export function buttonAddTask() {
   edit.addEventListener("click", () => Edit(span, editId));
 
   let span = document.createElement("span");
+  const span_ = span.innerText;
 
   // setup checkbox and Id's
   const checkboxId = `checkbox_${checkboxindex}`;
@@ -53,8 +51,8 @@ export function buttonAddTask() {
   checkbox.addEventListener("click", () =>
     Check(checkboxId, checkbox, li, Del)
   );
+  let ul = document.getElementById("added-ul");
 
-  const ul = document.getElementById("added-ul");
   // Super stuff
   span.innerText = NewTask;
   Del.innerText = "X";
