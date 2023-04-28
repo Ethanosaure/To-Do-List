@@ -7,6 +7,7 @@ export function Check(checkboxId, checkbox, li, Del) {
   //   if no class, append in to do tasks
   if (checkbox.classList == 0) {
     ToDo.appendChild(li);
+    Del.style.display = "none";
 
     return;
   }
